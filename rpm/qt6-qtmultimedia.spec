@@ -23,6 +23,7 @@ BuildRequires: qt6-qtbase-private-devel
 BuildRequires: qt6-qtbase-static
 %{?_qt6:Requires: %{_qt6}%{?_isa} = %{_qt6_version}}
 BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: qt6-qtdeclarative-static
 BuildRequires: qt6-qtshadertools-devel
 BuildRequires: qt6-qtquick3d-devel
 BuildRequires: pkgconfig(alsa)

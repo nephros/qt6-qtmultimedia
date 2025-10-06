@@ -14,6 +14,8 @@ License: LGPL-3.0-only OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 Url:     http://www.qt.io
 Source0: %{name}-%{version}.tar.bz2
 
+Patch1: fix-clang-pulse-narrowing.patch
+
 # filter plugin/qml provides
 %global __provides_exclude_from ^(%{_qt6_archdatadir}/qml/.*\\.so|%{_qt6_plugindir}/.*\\.so)$
 

@@ -2,6 +2,9 @@
 
 %global gst 1.0
 
+%bcond_with pipewire
+%bcond_with pipewire_video
+
 Summary: Qt6 - Multimedia support
 Name:    qt6-qtmultimedia
 Version: 6.8.3
@@ -41,6 +44,10 @@ BuildRequires: pkgconfig(libpulse) pkgconfig(libpulse-mainloop-glib)
 BuildRequires: pkgconfig(xkbcommon) >= 0.5.0
 BuildRequires: openssl-devel
 BuildRequires: ffmpeg-devel
+%if %{with pipewire}
+BuildRequires: pkgconfig(libpipewire-0.3)
+BuildRequires: pkgconfig(libspa-0.2)
+%endif
 
 # workaround missing dep
 # /usr/include/gstreamer-1.0/gst/gl/wayland/gstgldisplay_wayland.h:26:10: fatal error: wayland-client.h: No such file or directory
@@ -83,7 +90,14 @@ Requires: pkgconfig(libpulse-mainloop-glib)
   -DQT_FEATURE_gstreamer_gl_x11=OFF \
   -DQT_FEATURE_pulseaudio=ON \
   -DQT_BUILD_EXAMPLES:BOOL=OFF \
-  -DQT_INSTALL_EXAMPLES_SOURCES=OFF
+  -DQT_INSTALL_EXAMPLES_SOURCES=OFF \
+%if %{with pipewire}
+  -DQT_FEATURE_pipewire=ON \
+%if %{with pipewire_video}
+  -DQT_FEATURE_pipewire_screencapture=ON \
+%endif
+%endif
+  %{nil}
 
 %cmake_build
 

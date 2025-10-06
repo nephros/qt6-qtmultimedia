@@ -75,6 +75,7 @@ Requires: pkgconfig(libpulse-mainloop-glib)
   -DQT_FEATURE_alsa=OFF \
   -DQT_FEATURE_ffmpeg=ON \
   -DQT_FEATURE_gstreamer=ON \
+  -DQT_FEATURE_pulseaudio=OFF \
   -DQT_BUILD_EXAMPLES:BOOL=OFF \
   -DQT_INSTALL_EXAMPLES_SOURCES=OFF
 

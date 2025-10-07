@@ -5,6 +5,8 @@
 %bcond_with pipewire
 %bcond_with pipewire_video
 
+%bcond_with vulkan
+
 Summary: Qt6 - Multimedia support
 Name:    qt6-qtmultimedia
 Version: 6.8.3
@@ -46,6 +48,9 @@ BuildRequires: ffmpeg-devel
 %if %{with pipewire}
 BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(libspa-0.2)
+%endif
+%if %{with vulkan}
+BuildRequires: vulkan-headers
 %endif
 
 # workaround missing dep

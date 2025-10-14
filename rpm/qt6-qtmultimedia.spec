@@ -93,6 +93,8 @@ Requires: pkgconfig(libpulse-mainloop-glib)
   -DQT_FEATURE_gstreamer_gl_wayland=ON \
   -DQT_FEATURE_gstreamer_gl_x11=OFF \
   -DQT_FEATURE_pulseaudio=ON \
+  -DQT_FEATURE_pulseaudio=OFF \
+  -DQT_FEATURE_spatialaudio=ON \
   -DQT_BUILD_EXAMPLES:BOOL=OFF \
   -DQT_INSTALL_EXAMPLES_SOURCES=OFF \
 %if %{with pipewire}

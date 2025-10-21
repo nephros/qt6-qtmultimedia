@@ -1,4 +1,4 @@
-%global qt_version 6.10.0
+%global qt_version 6.8.3
 
 %global gst 1.0
 

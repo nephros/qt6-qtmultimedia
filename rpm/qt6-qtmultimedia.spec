@@ -1,4 +1,4 @@
-%global qt_version 6.8.3
+%global qt_version 6.10.0
 
 %global gst 1.0
 
@@ -9,15 +9,15 @@
 
 Summary: Qt6 - Multimedia support
 Name:    qt6-qtmultimedia
-Version: 6.8.3
+Version: 6.10.0
 Release: 3%{?dist}
 
 License: LGPL-3.0-only OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 Url:     http://www.qt.io
 Source0: %{name}-%{version}.tar.bz2
 
-Patch1: 8145cd06af7550d2b6bf765ff7e0d84eda568ca9.patch
-Patch2: fix-clang-pulse-narrowing.patch
+#Patch1: 8145cd06af7550d2b6bf765ff7e0d84eda568ca9.patch
+#Patch2: fix-clang-pulse-narrowing.patch
 
 # filter plugin/qml provides
 %global __provides_exclude_from ^(%{_qt6_archdatadir}/qml/.*\\.so|%{_qt6_plugindir}/.*\\.so)$

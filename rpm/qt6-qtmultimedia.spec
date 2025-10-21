@@ -83,6 +83,7 @@ Requires: pkgconfig(libpulse-mainloop-glib)
 . /opt/rh/gcc-toolset-13/enable
 %endif
 %cmake_qt6 \
+  -DQT_NO_PACKAGE_VERSION_CHECK=TRUE \
   -DQT_FEATURE_alsa=OFF \
   -DQT_FEATURE_ffmpeg=ON \
   -DQT_FEATURE_linux_v4l=OFF \
